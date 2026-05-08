@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thirukkural Medical Centre</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #0f766e, #0369a1);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 60px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #7dd3fc;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #dbeafe;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #0369a1;
+    }
+
+    .btn-primary:hover {
+      background: #e0f2fe;
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.12);
+      padding: 18px;
+      border-radius: 14px;
+      min-width: 130px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .stat-box h3 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    /* FEATURES */
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 17px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      color: #0369a1;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-image,
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #475569;
+    }
+
+    /* REVIEWS */
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+      gap: 25px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    }
+
+    .review-card h4 {
+      margin-bottom: 10px;
+      color: #0369a1;
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 15px;
+      color: #7dd3fc;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .section-title h2,
+      .about-text h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <h1>
+          Thirukkural <br>
+          <span>Medical Centre</span>
+        </h1>
+
+        <p>
+          Trusted healthcare clinic in Egattur providing compassionate medical care,
+          experienced doctors, patient-focused treatment, and 24/7 support.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="tel:09840436369" class="btn btn-primary">
+            Call Now
+          </a>
+
+          <a href="http://maps.google.com/?q=Thirukkural+Medical+Centre+Egattur+Chennai" target="_blank" class="btn btn-secondary">
+            Get Directions
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-box">
+            <h3>4.3★</h3>
+            <p>Google Rating</p>
+          </div>
+
+          <div class="stat-box">
+            <h3>57+</h3>
+            <p>Reviews</p>
+          </div>
+
+          <div class="stat-box">
+            <h3>24/7</h3>
+            <p>Open Hours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop"
+          alt="Medical Centre"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+        <p>Professional healthcare with patient-centered treatment</p>
+      </div>
+
+      <div class="features">
+
+        <div class="feature-card">
+          <h3>24 Hours Service</h3>
+          <p>
+            We are available around the clock to support emergency and regular medical needs.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Experienced Doctors</h3>
+          <p>
+            Qualified and caring doctors focused on accurate diagnosis and quality treatment.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Patient Care</h3>
+          <p>
+            Friendly staff and supportive healthcare services for families and individuals.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Accessible Facility</h3>
+          <p>
+            Wheelchair-accessible amenities and comfortable clinic environment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section about">
+    <div class="container about-content">
+
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1200&auto=format&fit=crop"
+          alt="Doctor"
+        />
+      </div>
+
+      <div class="about-text">
+        <h2>About Our Clinic</h2>
+
+        <p>
+          Thirukkural Medical Centre is a trusted medical clinic located on
+          Rajiv Gandhi IT Expressway, Egattur, Tamil Nadu.
+        </p>
+
+        <p>
+          We focus on delivering quality healthcare services with compassion,
+          professionalism, and patient-first care.
+        </p>
+
+        <p>
+          Our clinic is known for experienced doctors, caring staff,
+          and convenient accessibility for patients in and around OMR.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Patient Reviews</h2>
+        <p>What people say about our medical centre</p>
+      </div>
+
+      <div class="reviews-grid">
+
+        <div class="review-card">
+          <h4>Afrozeaziz</h4>
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Great experience as a first timer. The staffs are friendly and ensure
+            that I am properly informed about my health and care."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h4>Lakshmanan Murugesan</h4>
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Doctors are very good. Good treatment and professional medical care."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h4>Google Review</h4>
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Good Hospital, with nice doctors in a prime location. Staff are caring
+            and supportive."
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 style="color:white;">Contact Us</h2>
+        <p style="color:#cbd5e1;">
+          Reach us anytime for appointments and medical support
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Address</h3>
+
+          <p>
+            62, Rajiv Gandhi IT Expy,<br>
+            Uthandi, Egattur,<br>
+            Tamil Nadu 600130
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Phone</h3>
+
+          <p>
+            <a href="tel:09840436369" style="color:white;">
+              098404 36369
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Working Hours</h3>
+
+          <p>
+            Open 24 Hours<br>
+            All Days Available
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Thirukkural Medical Centre. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
